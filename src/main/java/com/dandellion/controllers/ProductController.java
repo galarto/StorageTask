@@ -25,9 +25,9 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    @PutMapping("/products/{id}")
-    public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product, @PathVariable("id") int id) {
-        Product updatedProduct = productService.updateProduct(id, product);
+    @PutMapping("/products")
+    public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product) {
+        Product updatedProduct = productService.saveProduct(product);
         if (updatedProduct != null) {
             return ResponseEntity.ok(updatedProduct);
         }
@@ -35,7 +35,7 @@ public class ProductController {
     }
 
     @GetMapping("/products/{id}")
-    public ResponseEntity<Product> findProduct(@PathVariable("id") int id) {
+    public ResponseEntity<Product> findProduct(@PathVariable("id") long id) {
         Product product = productService.getProduct(id);
         if (product != null) {
             return ResponseEntity.ok(product);
@@ -53,7 +53,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/products/{id}")
-    public ResponseEntity<Product> deleteProduct(@PathVariable("id") int id) {
+    public ResponseEntity<Product> deleteProduct(@PathVariable("id") long id) {
         var isRemoved = productService.deleteProduct(id);
         if (!isRemoved) {
             return ResponseEntity.notFound().build();

@@ -1,52 +1,43 @@
 package com.dandellion.services;
 
 import com.dandellion.models.Product;
+import com.dandellion.repositories.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 @Service
 public class ProductService {
-    private final List<Product> productList = new ArrayList<>();
+    @Autowired
+    private ProductRepository productRepository;
 
     public Product saveProduct(Product product) {
-        boolean savedProduct = productList.add(product);
-        if(savedProduct) {
-            return productList.get(productList.indexOf(product));
+        Product savedProduct = productRepository.save(product);
+        if (savedProduct != null) {
+            return savedProduct;
         }
-
         return null;
     }
 
-    public Product getProduct(int index) {
-        if(!productList.isEmpty() && index < productList.size() && productList.contains(productList.get(index))) {
-            return productList.get(index);
+
+    public Product getProduct(Long id) {
+        if (productRepository.existsById(id)) {
+            return productRepository.findById(id).get();
         }
         return null;
     }
 
     public List<Product> getProductList() {
-        if(!productList.isEmpty()) {
-            return productList;
-        }
-        return null;
+        return productRepository.findAll(Pageable.unpaged()).getContent();
     }
 
-    public Product updateProduct(int index, Product product) {
-        if(productList.size() > index && productList.contains(productList.get(index))) {
-            productList.add(index, product);
-            return product;
-        }
-        return saveProduct(product);
-    }
-
-    public boolean deleteProduct(int index) {
+    public boolean deleteProduct(Long id) {
         try {
-            if (productList.contains(productList.get(index))) {
-                productList.remove(index);
-                return true;
-            }
+            productRepository.deleteById(id);
+            return true;
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
