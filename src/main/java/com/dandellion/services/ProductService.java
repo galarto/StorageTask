@@ -34,6 +34,7 @@ public class ProductService {
         return productRepository.findAll(Pageable.unpaged()).getContent();
     }
 
+
     public boolean deleteProduct(Long id) {
         try {
             productRepository.deleteById(id);
@@ -43,4 +44,5 @@ public class ProductService {
         }
         return false;
     }
+
 }
