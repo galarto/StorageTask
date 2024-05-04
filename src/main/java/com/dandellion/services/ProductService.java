@@ -4,6 +4,7 @@ import com.dandellion.models.Product;
 import com.dandellion.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 
@@ -32,6 +33,35 @@ public class ProductService {
 
     public List<Product> getProductList() {
         return productRepository.findAll(Pageable.unpaged()).getContent();
+    }
+
+   public List<Product> findByTitleContaining(String title, Sort sort) {
+        List<Product> products = productRepository.findAllByTitleContaining(title, sort);
+        if(products != null) {
+            return products;
+        }
+        return null;
+    }
+    public List<Product> findByPriceGreaterThanEqual(Long price, Sort sort) {
+        List<Product> products = productRepository.findAllByPriceGreaterThanEqual(price, sort);
+        if(products != null) {
+            return products;
+        }
+        return null;
+    }
+    public List<Product> findByPriceLessThanEqual(Long price, Sort sort) {
+        List<Product> products = productRepository.findAllByPriceLessThanEqual(price, sort);
+        if(products != null) {
+            return products;
+        }
+        return null;
+    }
+    public List<Product> findByIsAvailable(Boolean available) {
+        List<Product> products = productRepository.findAllByIsAvailable(available);
+        if(products != null) {
+            return products;
+        }
+        return null;
     }
 
 

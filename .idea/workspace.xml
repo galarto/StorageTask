@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a550eeb-ca0d-4e1a-aff9-c8ab5036dd7d" name="Changes" comment="Second task solution">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="4a550eeb-ca0d-4e1a-aff9-c8ab5036dd7d" name="Changes" comment="Third task solution">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dandellion/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dandellion/controllers/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dandellion/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dandellion/repositories/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dandellion/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dandellion/services/ProductService.java" afterDir="false" />
     </list>
@@ -36,7 +33,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="t2" />
+        <entry key="$PROJECT_DIR$" value="t3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -142,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714489113332</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Third task solution">
+      <option name="closed" value="true" />
+      <created>1714726068260</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714726068260</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +192,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="First task solution" />
     <MESSAGE value="Second task solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second task solution" />
+    <MESSAGE value="Third task solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third task solution" />
   </component>
 </project>

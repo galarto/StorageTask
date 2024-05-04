@@ -4,6 +4,7 @@ import com.dandellion.models.Product;
 import com.dandellion.services.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -50,6 +51,63 @@ public class ProductController {
             return ResponseEntity.ok(products);
         }
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @GetMapping("/products/searcht/")
+    public ResponseEntity<List<Product>> getFilteredProductList(@Valid @RequestParam(required = false) String title,
+                                                                @Valid @RequestParam Boolean sorted) {
+        if(!sorted) {
+        List<Product> products = productService.findByTitleContaining(title, Sort.by("title").ascending());
+            if(products != null) {
+            return ResponseEntity.ok(products);
+            }
+        }
+        List<Product> products = productService.findByTitleContaining(title, Sort.by("title").descending());
+        if(products != null) {
+        return ResponseEntity.ok(products);
+        }
+        return ResponseEntity.noContent().build();
+    }
+    @GetMapping("/products/searchp/")
+    public ResponseEntity<List<Product>> getFilteredProductList(@Valid @RequestParam(required = false) Long gprice,
+                                                                @Valid @RequestParam(required = false) Long lprice,
+                                                                @Valid @RequestParam Boolean sorted) {
+        if(gprice != null && !sorted) {
+            List<Product> products = productService
+                                    .findByPriceGreaterThanEqual(gprice, Sort.by("price").ascending());
+            if(products != null) {
+                return ResponseEntity.ok(products);
+            }
+        } else if(gprice != null && sorted) {
+            List<Product> products = productService
+                    .findByPriceGreaterThanEqual(gprice, Sort.by("price").descending());
+            if(products != null) {
+                return ResponseEntity.ok(products);
+            }
+        }
+        if(lprice != null && !sorted) {
+            List<Product> products = productService
+                                    .findByPriceLessThanEqual(lprice, Sort.by("price").ascending());
+            if (products != null) {
+                return ResponseEntity.ok(products);
+            }
+        } else if (lprice != null && sorted) {
+            List<Product> products = productService
+                                    .findByPriceLessThanEqual(lprice, Sort.by("price").descending());
+            if (products != null) {
+                return ResponseEntity.ok(products);
+            }
+        }
+        return ResponseEntity.noContent().build();
+    }
+    @GetMapping("/products/searchlp/")
+    public ResponseEntity<List<Product>> getFilteredProductList(@Valid @RequestParam(required = false,
+                                                                value = "available") Boolean available) {
+        List<Product> products = productService.findByIsAvailable(available);
+        if(products != null) {
+            return ResponseEntity.ok(products);
+        }
+        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/products/{id}")
