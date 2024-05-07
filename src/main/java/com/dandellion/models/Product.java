@@ -10,6 +10,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 
+
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode
@@ -34,7 +35,7 @@ public class Product {
 
     @Column
     @PositiveOrZero
-    private long price;
+    private double price;
 
     @Column(name = "is_available")
     private boolean isAvailable = false;

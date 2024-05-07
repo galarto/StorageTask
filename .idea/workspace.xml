@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a550eeb-ca0d-4e1a-aff9-c8ab5036dd7d" name="Changes" comment="Third task solution" />
+    <list default="true" id="4a550eeb-ca0d-4e1a-aff9-c8ab5036dd7d" name="Changes" comment="Добавлен README.md">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dandellion/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dandellion/controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dandellion/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dandellion/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dandellion/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dandellion/repositories/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dandellion/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dandellion/services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/initDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/initDB.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +38,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -88,8 +98,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>
@@ -143,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714726068260</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Добавлен README.md">
+      <option name="closed" value="true" />
+      <created>1714806212939</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714806212939</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,6 +207,7 @@
     <MESSAGE value="First task solution" />
     <MESSAGE value="Second task solution" />
     <MESSAGE value="Third task solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third task solution" />
+    <MESSAGE value="Добавлен README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен README.md" />
   </component>
 </project>
