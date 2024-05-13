@@ -1,0 +1,17 @@
+version: '2.1'
+
+services:
+  postgres:
+    image: 'postgres:15.0'
+    environment:
+      DB_SERVER: postgres
+      POSTGRES_DB: products
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 09031999
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+
+
+
